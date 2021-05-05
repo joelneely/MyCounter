@@ -20,6 +20,14 @@ Class {
 }
 
 { #category : #accessing }
+Counter class >> startingAt: anInteger [
+	"creates a new instance initialized to the target value as its count"	
+			
+	^ self new count: anInteger.
+
+]
+
+{ #category : #accessing }
 Counter >> count [
 	"Provide the current value"
 	^ count
@@ -43,4 +51,22 @@ Counter >> decrement [
 Counter >> increment [
 	"increases the count"
 	count := count + 1
+]
+
+{ #category : #initialization }
+Counter >> initialize [
+	"ensure that the initial count is zero"	
+			
+	count := 0
+
+]
+
+{ #category : #printing }
+Counter >> printOn: aStream [
+	"provide an enhanced representation of an instance"
+
+	super printOn: aStream.
+	aStream
+		nextPutAll: ' with value: ';
+		nextPutAll: count printString  "the printString message is necessary!"
 ]
