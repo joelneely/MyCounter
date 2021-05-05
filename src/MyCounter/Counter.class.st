@@ -31,3 +31,16 @@ Counter >> count: startingValue [
 	count := startingValue
 
 ]
+
+{ #category : #operations }
+Counter >> decrement [
+	"decrease the count"
+	count := count - 1
+	
+]
+
+{ #category : #operations }
+Counter >> increment [
+	"increases the count"
+	count := count + 1
+]
